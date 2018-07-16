@@ -1,0 +1,23 @@
+extends layout
+block content
+
+	table.table.border
+		thead.thead-dark
+			tr
+				td ID
+				td Title
+				td Author
+				td Action
+		tbody
+			each arti, i in article
+				tr
+					td=arti._id
+					td=arti.title
+					td=arti.author
+					td
+						a.btn.btn-info(href='/edit/'+arti._id) Edit
+						a.btn.btn-danger.delete-article(href='javascript:void();', data-id= arti._id) Delete
+	ul.list-group
+		each arti, i in article
+			li.list-group-item
+				a(href='/article/'+arti._id)= arti.title

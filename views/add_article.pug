@@ -1,0 +1,12 @@
+extends layout
+block content
+	h1 Add Data
+	form(method="post", action="/add")
+		.form-group
+			label Title:
+			input.form-control(name='title', type='text')
+		.form-group
+			label Author:
+			input.form-control(name='author', type='text')
+		.form-group
+			input.btn.btn-success(type='submit', value='submit')
